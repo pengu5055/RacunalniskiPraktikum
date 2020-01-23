@@ -1,0 +1,56 @@
+  if Check.part():
+        Check.current_part['token'] = 'eyJ1c2VyIjo0NTAwLCJwYXJ0IjoyMTQwNn0:1iIHKD:WPN7D399zm_92P3MTUZPtEVUHxk'
+        try:
+            Check.equal('vsota_kvadratov_stevk(123)', 14) #
+            Check.equal('vsota_kvadratov_stevk(998)', 226) #
+            Check.equal('vsota_kvadratov_stevk(111)', 3) #
+            Check.equal('vsota_kvadratov_stevk(999)', 243) #
+            Check.equal('vsota_kvadratov_stevk(321)', 14) #
+            Check.equal('vsota_kvadratov_stevk(714)', 66) and \ 
+            Check.equal('vsota_kvadratov_stevk(417)', 66) and \ 
+            Check.equal('vsota_kvadratov_stevk(471)', 66) and \ 
+            Check.equal('vsota_kvadratov_stevk(174)', 66) and \  
+            Check.equal('vsota_kvadratov_stevk(741)', 66) and \  
+            Check.equal('vsota_kvadratov_stevk(147)', 66) # vse tuki 66
+        except: 
+            Check.error("Testi sprožijo izjemo\n  {0}",
+                        "\n  ".join(traceback.format_exc().split("\n"))[:-2])
+
+
+    if Check.part():
+        Check.current_part['token'] = 'eyJ1c2VyIjo0NTAwLCJwYXJ0IjoyMTQwOH0:1iIHKD:PALJ8WPdGHUfhL4AGSkbbWk4IqA'
+        try:
+            Check.equal('dodaj_kontrolno_stevko(265195368523)', 2651953685235)
+            Check.equal('dodaj_kontrolno_stevko(309763415292)', 3097634152921)
+            Check.equal('dodaj_kontrolno_stevko(790490603490)', 7904906034909)
+            Check.equal('dodaj_kontrolno_stevko(957800321625)', 9578003216256)
+            Check.equal('dodaj_kontrolno_stevko(958811067176)', 9588110671763)
+            Check.equal('dodaj_kontrolno_stevko(967881885905)', 9678818859054)
+            Check.equal('dodaj_kontrolno_stevko(948946641471)', 9489466414712)
+            Check.equal('dodaj_kontrolno_stevko(641602340292)', 6416023402920)
+            Check.equal('dodaj_kontrolno_stevko(948666700540)', 9486667005400)
+            Check.equal('dodaj_kontrolno_stevko(121679652819)', 1216796528197)
+            Check.equal('dodaj_kontrolno_stevko(493557029514)', 4935570295148)
+        except:
+            Check.error("Testi sprožijo izjemo\n  {0}",
+                        "\n  ".join(traceback.format_exc().split("\n"))[:-2])
+
+
+
+    if Check.part():
+        Check.current_part['token'] = 'eyJ1c2VyIjo0NTAwLCJwYXJ0IjoyMTQwN30:1iIHKD:8ClfEyl08fzFPPPn6JRDVGuM4qA'
+        try:
+            Check.equal('obrat(123)', 321)
+            Check.equal('obrat(998)', 899)
+            Check.equal('obrat(111)', 111)
+            Check.equal('obrat(999)', 999)
+            Check.equal('obrat(321)', 123)
+            Check.equal('obrat(714)', 417) and \
+            Check.equal('obrat(417)', 714) and \
+            Check.equal('obrat(471)', 174) and \
+            Check.equal('obrat(174)', 471) and \
+            Check.equal('obrat(741)', 147) and \
+            Check.equal('obrat(147)', 741)
+        except:
+            Check.error("Testi sprožijo izjemo\n  {0}",
+                        "\n  ".join(traceback.format_exc().split("\n"))[:-2])

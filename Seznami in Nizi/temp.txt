@@ -1,0 +1,15 @@
+
+def porezani_podseznami(t):
+    l = []
+    lt = len(t)
+    print(t)
+    for i in range(lt + 1):
+        l.append(t)
+        print("current" + str(l))
+        try:
+            t.pop(0)
+            print("popped " + str(t))
+        except IndexError:
+            return [t]
+
+    return l

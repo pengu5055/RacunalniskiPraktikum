@@ -1,0 +1,29 @@
+def pari(s):
+    p = set()
+    ljub = list(ljubljeni(s))
+    print(ljub)
+    for oseba in s:
+        for i in range(len(ljub)):
+            for r in range(len(s[oseba])):
+                print("S: " + list(s[oseba])[r])
+                print("LJUB: " + ljub[i])
+                if list(s[oseba])[r] == ljub[i]:
+                    p.add(oseba)
+                    p.add(ljub[i])
+
+
+    return p
+
+
+def pari(s):
+    p = set()
+    for u, i in s.items():
+        for q in i:  # q je oseba ki jo mara i
+            print("q " + q)
+            print(s[q])
+            print("u : " + u)
+
+            if u in s[q]:
+                p.add((u, q))
+
+    return p

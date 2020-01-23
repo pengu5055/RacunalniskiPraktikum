@@ -1,0 +1,5 @@
+  - Izraz prvo_prastevilo_z_vsoto_stevk_vsaj(8) vrne 19 namesto 17.
+  - Izraz prvo_prastevilo_z_vsoto_stevk_vsaj(10) vrne 29 namesto 19.
+  - Izraz prvo_prastevilo_z_vsoto_stevk_vsaj(14) vrne 79 namesto 59.
+  - Izraz prvo_prastevilo_z_vsoto_stevk_vsaj(35) vrne 29989 namesto 8999.
+  - Izraz prvo_prastevilo_z_vsoto_stevk_vsaj(37) vrne 39989 namesto 29989.
