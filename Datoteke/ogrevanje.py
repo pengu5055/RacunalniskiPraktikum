@@ -60,6 +60,14 @@ def prepisi_in_zagrozi(f_in, f_out):
 #     >>> groznje_z_dovolj_klicaji(["diplomatsko.txt", "nepoliticno.txt"])
 #     ['nepoliticno.txt']
 # =============================================================================
+def groznje_z_dovolj_klicaji(t):
+    for file in t:
+        with open(file, "r", encoding="utf-8") as f:
+            content = f.read()
+            if content.count("!") >= 3:
+                return [file]
+
+    return []
 
 
 
