@@ -97,7 +97,43 @@ def koliko_iz_datoteke(vhodna, izhodna):
 #     Luka 2
 #     Jaka 1
 # =============================================================================
+def koliko_urejen(vhodna, izhodna):
+    data = {}  # Already added
+    with open(vhodna, "r", encoding="utf-8") as f:
+        for line in f.readlines():
+            line = line.replace("\n", "")
+            names = line.split(",")
+            for name in names:
+                if name not in data:
+                    data[name] = 1
+                else:
+                    data[name] = data.get(name) + 1
+    f.close()
+    v = list(data.values())
+    k = list(data.keys())
+    with open(izhodna, "w+", encoding="utf-8") as f:
+        for key in list(k):
+            try:
+                m = max(v)
+            except ValueError:
+                break
+            if v.count(max(v)) > 1:
+                indices = [a for a, x in enumerate(v) if x == max(v)]
+                dup = [] # Duplicate values
+                for index in indices:
+                    dup.append(k[index])
 
+                dup.sort()
+                for ime in dup:
+                    i = v.index(max(v))  # Current max value in value list
+                    f.write("{} {}\n".format(ime, max(v)))
+                    k.pop(i)
+                    v.pop(i)
+            elif v.count(max(v)) == 1:
+                i = v.index(max(v))  # Current max value in value list
+                f.write("{} {}\n".format(k[i], v[i]))
+                k.pop(i)
+                v.pop(i)
 
 
 
@@ -400,7 +436,7 @@ class Check:
     @contextmanager
     def in_file(filename, content, encoding=None):
         encoding = Check.get('encoding', encoding)
-        with open(filename, 'w', encoding=encoding) as f:
+        with open(filename, 'w', encoding="utf-8") as f:
             for line in content:
                 print(line, file=f)
         old_feedback = Check.current_part['feedback'][:]
