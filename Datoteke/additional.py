@@ -16,7 +16,7 @@ def rezultati(vhodna, izhodna):
 
     with open(izhodna, "w+", encoding="utf-8") as f:
         for element in data:
-            f.write(",".join([str(a) for a in element]) + "\n") # Zdruzi mesta lista, prej pa se vse int spremeni v str
+            f.write(",".join([str(a) for a in element]) + "\n")
 
-        f.write(",".join([str(b) +"0" if len(str(b)) < 4 else str(b) for b in ["POVPRECEN STUDENT"] +
+        + f.write(",".join([str(b) +"0" if len(str(b)) < 4 else str(b) for b in ["POVPRECEN STUDENT"] +
                           [float(round(mean(i[a] for i in data), 2)) for a in range(1, len(data[1]))]]))
