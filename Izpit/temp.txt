@@ -1,0 +1,13 @@
+output = []
+    ve = [zacetnik]
+    while len(ve.copy()) < len(omrezje.keys()):
+        for zeve in ve:
+            for oseba, prijatelji in omrezje.items():
+                if oseba == zeve:
+                    for prijatelj in prijatelji:
+                        if prijatelj not in ve:
+                            ve.append(prijatelj)
+
+        output.append(len(ve))
+
+    return output
